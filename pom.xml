@@ -442,43 +442,47 @@
           </configuration>
         </plugin>
 
-        <plugin>
+        <!--<plugin>
           <groupId>com.mycila</groupId>
           <artifactId>license-maven-plugin</artifactId>
           <version>${license.plugin}</version>
           <configuration>
+            <skip>true</skip>
             <licenseSets>
               <licenseSet>
                 <header>${project.basedir}/LICENSE_HEADER</header>
                 <excludes>
-                  <!-- Default excludes located at https://github.com/mathieucarbou/license-maven-plugin/blob/master/license-maven-plugin/src/main/java/com/mycila/maven/plugin/license/Default.java -->
+                  &lt;!&ndash; Default excludes located at https://github.com/mathieucarbou/license-maven-plugin/blob/master/license-maven-plugin/src/main/java/com/mycila/maven/plugin/license/Default.java &ndash;&gt;
 
-                  <!-- Exclude extra items used throughout mybatis -->
+                  &lt;!&ndash; Exclude extra items used throughout mybatis &ndash;&gt;
                   <exclude>**/*.ctrl</exclude>
                   <exclude>**/*.dat</exclude>
                   <exclude>ICLA</exclude>
                   <exclude>KEYS</exclude>
                   <exclude>NOTICE</exclude>
 
-                  <!-- Exclude special folder to ignore license -->
+                  &lt;!&ndash; Exclude special folder to ignore license &ndash;&gt;
                   <exclude>**/ibderby/**</exclude>
                 </excludes>
               </licenseSet>
             </licenseSets>
             <mapping>
-              <!-- Default mapping located at https://github.com/mathieucarbou/license-maven-plugin/blob/master/license-maven-plugin/src/main/java/com/mycila/maven/plugin/license/document/DocumentType.java -->
+              &lt;!&ndash; Default mapping located at https://github.com/mathieucarbou/license-maven-plugin/blob/master/license-maven-plugin/src/main/java/com/mycila/maven/plugin/license/document/DocumentType.java &ndash;&gt;
               <xml.vm>XML_STYLE</xml.vm>
             </mapping>
             <prohibitLegacyUse>true</prohibitLegacyUse>
           </configuration>
-          <dependencies>
+          &lt;!&ndash;<dependencies>
             <dependency>
               <groupId>com.mycila</groupId>
               <artifactId>license-maven-plugin-git</artifactId>
               <version>${license.version}</version>
+              <configuration>
+                <skip>true</skip>
+              </configuration>
             </dependency>
-          </dependencies>
-        </plugin>
+          </dependencies>&ndash;&gt;
+        </plugin>-->
 
         <plugin>
           <groupId>com.github.hazendaz.maven</groupId>
@@ -502,6 +506,7 @@
           <artifactId>formatter-maven-plugin</artifactId>
           <version>${formatter.plugin}</version>
           <configuration>
+            <lineEnding>LF</lineEnding>
             <configFile>${formatter.config}</configFile>
             <skipXmlFormatting>true</skipXmlFormatting>
           </configuration>
@@ -1162,6 +1167,9 @@
           <plugin>
             <groupId>net.revelc.code.formatter</groupId>
             <artifactId>formatter-maven-plugin</artifactId>
+            <configuration>
+              <skip>true</skip>
+            </configuration>
             <executions>
               <execution>
                 <goals>
@@ -1259,13 +1267,13 @@
           </plugin>
 
           <!-- Skip license plugin during release as maven release is now shallow cloned -->
-          <plugin>
+          <!--<plugin>
             <groupId>com.mycila</groupId>
             <artifactId>license-maven-plugin</artifactId>
             <configuration>
               <skip>true</skip>
             </configuration>
-          </plugin>
+          </plugin>-->
 
           <!-- deploy site with maven-scm-publish-plugin -->
           <plugin>
@@ -1323,10 +1331,13 @@
         </file>
       </activation>
       <build>
-        <plugins>
+        <!--<plugins>
           <plugin>
             <groupId>com.mycila</groupId>
             <artifactId>license-maven-plugin</artifactId>
+            <configuration>
+              <skip>true</skip>
+            </configuration>
             <executions>
               <execution>
                 <goals>
@@ -1336,7 +1347,7 @@
               </execution>
             </executions>
           </plugin>
-        </plugins>
+        </plugins>-->
       </build>
     </profile>
 
